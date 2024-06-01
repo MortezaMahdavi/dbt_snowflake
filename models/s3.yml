@@ -1,0 +1,54 @@
+version: 2
+
+s3:
+  - name: src_nyc_taxi_data
+    description: "External table for NYC taxi data"
+    tables:
+      - name: green_tripdata_2018_02
+        description: "Green taxi trip data for February 2018"
+        external_location: "@my_nyc/green_tripdata_2018-02.csv"
+        file_format:
+          type: csv
+          field_delimiter: ','
+          skip_header: 1
+        columns:
+          - name: vendorid
+            data_type: string
+          - name: lpep_pickup_datetime
+            data_type: timestamp
+          - name: lpep_dropoff_datetime
+            data_type: timestamp
+          - name: store_and_fwd_flag
+            data_type: string
+          - name: ratecodeid
+            data_type: integer
+          - name: pulocationid
+            data_type: integer
+          - name: dolocationid
+            data_type: integer
+          - name: passenger_count
+            data_type: integer
+          - name: trip_distance
+            data_type: float
+          - name: fare_amount
+            data_type: float
+          - name: extra
+            data_type: float
+          - name: mta_tax
+            data_type: float
+          - name: tip_amount
+            data_type: float
+          - name: tolls_amount
+            data_type: float
+          - name: ehail_fee
+            data_type: float
+          - name: improvement_surcharge
+            data_type: float
+          - name: total_amount
+            data_type: float
+          - name: payment_type
+            data_type: integer
+          - name: trip_type
+            data_type: integer
+          - name: congestion_surcharge
+            data_type: float
